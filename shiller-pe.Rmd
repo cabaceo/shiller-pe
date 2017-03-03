@@ -1,0 +1,47 @@
+---
+title: "Shiller PE Ratio"
+output: 
+  flexdashboard::flex_dashboard:
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(Quandl)
+library(dygraphs)
+library(flexdashboard)
+```
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+Shiller PE ratio for the S&P 500. Price earnings ratio is based on average inflation-adjusted earnings from the previous 10 years, known as the Cyclically Adjusted PE Ratio (CAPE Ratio), Shiller PE Ratio, or PE 10 FAQ. 
+
+Data courtesy of Robert Shiller from his book, Irrational Exuberance. Data source: [Quandl](https://www.quandl.com/data/MULTPL/SHILLER_PE_RATIO_MONTH-Shiller-PE-Ratio-by-Month).
+
+Made by [Cabaceo LLC](https://cabaceo.com).
+
+
+Column
+-----------------------------------------------------------------------
+
+### Shiller PE Ratio
+
+```{r}
+# download data from quandl
+df = Quandl("MULTPL/SHILLER_PE_RATIO_MONTH", type = "xts", frequency = "12",
+            authcode="m4gsMj9ceAhvA7BqVKNy")
+names(df) = "Shiller PE"
+
+# plot
+# renderDygraph({
+        dygraph(df, ylab = "Shiller PE Ratio") %>% 
+                dyOptions(drawGrid = T) %>% 
+                dyRangeSelector() %>% 
+                dyEvent("1929-10-29", "Great Depression", labelLoc = "bottom") %>% 
+                dyShading(from = "1929-09-04", to = "1939-12-01", color = "#FFE6E6") %>% 
+                dyEvent("2000-03-11", "Dot-com Crash", labelLoc = "bottom") %>% 
+                dyShading(from = "2000-03-11", to = "2002-10-09", color = "#FFE6E6") %>% 
+                dyEvent("2007-10-01", "Great Recession", labelLoc = "bottom") %>% 
+                dyShading(from = "2007-10-01", to = "2009-03-01", color = "#FFE6E6") %>% 
+                dyLimit(25, color = "red")
+# })
+```
