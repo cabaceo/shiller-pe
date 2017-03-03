@@ -32,16 +32,14 @@ df = Quandl("MULTPL/SHILLER_PE_RATIO_MONTH", type = "xts", frequency = "12",
 names(df) = "Shiller PE"
 
 # plot
-# renderDygraph({
-        dygraph(df, ylab = "Shiller PE Ratio") %>% 
-                dyOptions(drawGrid = T) %>% 
-                dyRangeSelector() %>% 
-                dyEvent("1929-10-29", "Great Depression", labelLoc = "bottom") %>% 
-                dyShading(from = "1929-09-04", to = "1939-12-01", color = "#FFE6E6") %>% 
-                dyEvent("2000-03-11", "Dot-com Crash", labelLoc = "bottom") %>% 
-                dyShading(from = "2000-03-11", to = "2002-10-09", color = "#FFE6E6") %>% 
-                dyEvent("2007-10-01", "Great Recession", labelLoc = "bottom") %>% 
-                dyShading(from = "2007-10-01", to = "2009-03-01", color = "#FFE6E6") %>% 
-                dyLimit(25, color = "red")
-# })
+dygraph(df, ylab = "Shiller PE Ratio") %>% 
+        dyOptions(drawGrid = T) %>% 
+        dyRangeSelector() %>% 
+        dyEvent("1929-10-29", "Great Depression", labelLoc = "bottom") %>% 
+        dyShading(from = "1929-09-04", to = "1939-12-01", color = "#FFE6E6") %>% 
+        dyEvent("2000-03-11", "Dot-com Crash", labelLoc = "bottom") %>% 
+        dyShading(from = "2000-03-11", to = "2002-10-09", color = "#FFE6E6") %>% 
+        dyEvent("2007-10-01", "Great Recession", labelLoc = "bottom") %>% 
+        dyShading(from = "2007-10-01", to = "2009-03-01", color = "#FFE6E6") %>% 
+        dyLimit(25, color = "red")
 ```
