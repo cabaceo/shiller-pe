@@ -21,13 +21,6 @@ Data courtesy of Robert Shiller from his book, Irrational Exuberance. Data sourc
 Made by [Cabaceo LLC](https://cabaceo.com).
 
 
-
-```{r, echo=F}
-htmltools::includeHTML("www/google-ads-size-auto.html")
-```
-
-
-
 Column
 -----------------------------------------------------------------------
 
