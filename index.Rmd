@@ -2,6 +2,7 @@
 title: "Shiller PE Ratio"
 output: 
   flexdashboard::flex_dashboard:
+    social: ["twitter", "facebook", "google-plus", "linkedin", "pinterest"]
     vertical_layout: fill
 ---
 
