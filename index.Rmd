@@ -21,6 +21,13 @@ Data courtesy of Robert Shiller from his book, Irrational Exuberance. Data sourc
 Made by [Cabaceo LLC](https://cabaceo.com).
 
 
+<script>async="async", src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"</script>
+```{r}
+htmltools::includeHTML("www/google-ads-size-auto.html")
+```
+<script>"(adsbygoogle = window.adsbygoogle || []).push({});"</script>
+
+
 Column
 -----------------------------------------------------------------------
 
